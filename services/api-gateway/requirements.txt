@@ -3,5 +3,5 @@ uvicorn[standard]==0.24.0
 httpx==0.25.1
 tiktoken==0.5.1
 python-dotenv==1.0.0
-litellm==1.15.0
+litellm==1.61.15
 pydantic==2.5.0
