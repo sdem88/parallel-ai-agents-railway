@@ -55,4 +55,4 @@ logs/
 
 # Misc
 *.pem
-thumbs.db
+thumbs.db.env.production
