@@ -1,0 +1,20 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "nixpacks",
+    "nixpacksPlan": {
+      "providers": ["python"],
+      "phases": {
+        "setup": {
+          "nixPkgs": ["python311"]
+        }
+      }
+    }
+  },
+  "deploy": {
+    "startCommand": "uvicorn main:app --host 0.0.0.0 --port ${PORT:-4000}",
+    "healthcheckPath": "/health",
+    "healthcheckTimeout": 60,
+    "restartPolicyType": "on_failure"
+  }
+}

@@ -1,0 +1,23 @@
+# minimal sample
+general_settings:
+  proxy_budget_resets_cron: "0 0 1 * *"     # reset 1st of each month
+
+keys:
+  # Managed-billing mode – master keys you own
+  - key: "OPENAI_MASTER_${OPENAI_KEY}"
+    models: ["gpt-*", "o3-*"]
+    spend_limit: 200.00      # USD
+  - key: "ANTHROPIC_MASTER_${ANTHROPIC_KEY}"
+    models: ["claude-*"]
+    spend_limit: 200.00
+
+per_user_sub_budget:
+  # Example BYO key a journalist pasted
+  "user:jsmith_openai":       # namespace = workspace:id
+    spend_limit: 50.00
+
+endpoints:
+  - name: openai
+    url: https://api.openai.com/v1
+  - name: anthropic
+    url: https://api.anthropic.com/v1
